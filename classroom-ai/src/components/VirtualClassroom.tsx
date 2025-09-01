@@ -6,43 +6,19 @@ export default function VirtualClassroom() {
   const [activeTab, setActiveTab] = useState('whiteboard');
 
   return (
-    <div className="min-h-screen bg-gray-50 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)] bg-[length:20px_20px]">
+    <div className="bg-gray-50 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)] bg-[length:20px_20px]">
       {/* Top Navigation Bar */}
-      <div className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="flex justify-between items-center">
+      <div className="h-12 bg-white border-b border-gray-200 px-6 py-4">
+        <div className="h-4 flex justify-between items-center">
           {/* Left Side - Tool Buttons */}
           <div className="flex space-x-3">
-            <button
-              onClick={() => setActiveTab('whiteboard')}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                activeTab === 'whiteboard'
-                  ? 'bg-gray-800 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-              <span>Whiteboard</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('browser')}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                activeTab === 'browser'
-                  ? 'bg-gray-800 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-              <span>Browser</span>
-            </button>
+
           </div>
 
           {/* Right Side - Time and Quiz */}
           <div className="flex items-center space-x-6">
             {/* Time Display */}
-            <div className="text-right">
-              <div className="text-sm text-gray-500">Remaining Time</div>
-              <div className="text-2xl font-bold text-gray-800">18:23</div>
-            </div>
+
 
             {/* Quiz Button */}
             <div className="flex flex-col items-center space-y-1">
@@ -65,7 +41,30 @@ export default function VirtualClassroom() {
       {/* Main Content Area */}
       <div className="flex-1 p-6">
         <div className="max-w-6xl mx-auto">
-          {/* Main Content Frame */}
+          <div className='flex space-x-4 mb-4'>
+            {/* Main Content Frame */}
+            <button
+              onClick={() => setActiveTab('whiteboard')}
+              className={`flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'whiteboard'
+                ? 'bg-gray-800 text-white'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+            >
+              <div className="w-2.5 h-2.5 bg-white rounded-full cursor-pointer"></div>
+              <span className='text-xs'>Whiteboard</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('whiteboard')}
+              className={`flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'whiteboard'
+                ? 'bg-gray-800 text-white'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+            >
+              <div className="w-2.5 h-2.5 bg-white rounded-full cursor-pointer"></div>
+              <span className='text-xs'>Browser</span>
+            </button>
+            <div className="text-sm text-gray-500 content-end">Remaining Time:18:23</div>
+          </div>
           <div className="relative bg-gray-100 border-4 border-blue-500 rounded-lg min-h-[500px] p-6">
             {/* Content Placeholder */}
             <div className="text-center text-gray-500 mt-20">
