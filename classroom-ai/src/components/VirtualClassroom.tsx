@@ -1,6 +1,8 @@
 'use client';
 
+
 import { useState } from 'react';
+import ExcalidrawCanvas from './ExcalidrawCanvas'; // adjust path if needed
 
 export default function VirtualClassroom() {
   const [activeTab, setActiveTab] = useState('whiteboard');
@@ -8,40 +10,12 @@ export default function VirtualClassroom() {
   return (
     <div className="bg-gray-50 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)] bg-[length:20px_20px]">
       {/* Top Navigation Bar */}
-      <div className="h-12 bg-white border-b border-gray-200 px-6 py-4">
-        <div className="h-4 flex justify-between items-center">
-          {/* Left Side - Tool Buttons */}
-          <div className="flex space-x-3">
-
-          </div>
-
-          {/* Right Side - Time and Quiz */}
-          <div className="flex items-center space-x-6">
-            {/* Time Display */}
-
-
-            {/* Quiz Button */}
-            <div className="flex flex-col items-center space-y-1">
-              <button className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold hover:bg-blue-700 transition-colors duration-200">
-                ?
-              </button>
-              <span className="text-xs text-gray-600 font-medium">Quiz</span>
-            </div>
-
-            {/* Download Arrow */}
-            <button className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors duration-200">
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+   
 
       {/* Main Content Area */}
       <div className="flex-1 p-6">
         <div className="max-w-6xl mx-auto">
-          <div className='flex space-x-4 mb-4'>
+          <div className='flex space-x-4 mb-1.5'>
             {/* Main Content Frame */}
             <button
               onClick={() => setActiveTab('whiteboard')}
@@ -63,14 +37,18 @@ export default function VirtualClassroom() {
               <div className="w-2.5 h-2.5 bg-white rounded-full cursor-pointer"></div>
               <span className='text-xs'>Browser</span>
             </button>
-            <div className="text-sm text-gray-500 content-end">Remaining Time:18:23</div>
+            <div className="text-sm text-gray-500">Remaining Time:18:23</div>
           </div>
           <div className="relative bg-gray-100 border-4 border-blue-500 rounded-lg min-h-[500px] p-6">
-            {/* Content Placeholder */}
-            <div className="text-center text-gray-500 mt-20">
-              <div className="text-4xl font-bold mb-4">Virtual Classroom</div>
-              <p className="text-lg">Your content will appear here</p>
-            </div>
+            {/* Content Area */}
+{activeTab === 'whiteboard' ? (
+  <ExcalidrawCanvas />
+) : (
+  <div className="text-center text-gray-500 mt-20">
+    <div className="text-4xl font-bold mb-4">Browser</div>
+    <p className="text-lg">Your browser view will appear here</p>
+  </div>
+)}
 
             {/* Language/Communication Icon - Bottom Right */}
             <div className="absolute bottom-6 right-6">
