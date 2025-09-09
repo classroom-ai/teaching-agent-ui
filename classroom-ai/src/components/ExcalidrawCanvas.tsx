@@ -10,7 +10,7 @@ const Excalidraw = dynamic(
 
 export default function ExcalidrawCanvas() {
   return (
-    <div style={{ height: "500px" }}>
+    <div style={{ height: "63.5vh" }}>
       <Excalidraw>
         {/* <WelcomeScreen>
           <WelcomeScreen.Center>

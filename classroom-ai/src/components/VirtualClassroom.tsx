@@ -39,7 +39,7 @@ export default function VirtualClassroom() {
             </button>
             <div className="text-sm text-gray-500">Remaining Time:18:23</div>
           </div>
-          <div className="relative bg-gray-100 border-4 border-blue-500 rounded-lg min-h-[500px] p-6">
+          <div className="relative bg-gray-100 border-4 border-blue-500 rounded-lg h-[65vh]">
             {/* Content Area */}
 {activeTab === 'whiteboard' ? (
   <ExcalidrawCanvas />
@@ -49,24 +49,6 @@ export default function VirtualClassroom() {
     <p className="text-lg">Your browser view will appear here</p>
   </div>
 )}
-
-            {/* Language/Communication Icon - Bottom Right */}
-            <div className="absolute bottom-6 right-6">
-              <div className="w-12 h-12 bg-white rounded-full border-2 border-blue-500 flex items-center justify-center shadow-lg">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">US</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Download Icon - Top Right of Content Area */}
-            <div className="absolute top-6 right-6">
-              <button className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors duration-200">
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
       </div>
