@@ -30,14 +30,14 @@ export default function Navbar() {
           </div>
 
           {/* User Profile and Dropdown */}
-          <div className="flex items-center space-x-3">
-            <div className="relative" ref={dropdownRef}>
+          <div className="flex items-center space-x-3 ">
+            <div className="relative " ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center space-x-2 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
+                className="flex items-center cursor-pointer space-x-2 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200"
               >
                 {/* User Profile Picture */}
-                <div className="w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all duration-200">
+                <div className="w-8 h-8 rounded-full overflow-hidden transition-all duration-200">
                   <Image
                     src="/personal.png"
                     alt="User Profile"
