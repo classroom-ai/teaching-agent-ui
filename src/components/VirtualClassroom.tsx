@@ -38,7 +38,6 @@ export default function VirtualClassroom() {
                 <div className="w-2.5 h-2.5 bg-white rounded-full cursor-pointer"></div>
                 <span className='text-xs'>Browser</span>
               </button>
-              <div className="text-sm text-gray-500">Remaining Time:18:23</div>
             </div>
             <div className="relative bg-gray-100 border-2 border-dashed border-[#CBCBCB] rounded-lg h-[65vh]">
               {/* Content Area */}
@@ -74,13 +73,13 @@ export default function VirtualClassroom() {
 
         </div>
         <div className=' bg-[#F9FAFB] p-3 rounded-lg mt-2'>
-          <div className='mt-2'>
+          <div className='mt-1'>
             <p className='text-blue-500 text-sm'>Student</p>
             <p className='text-xs text-gray-600'> What is Newtons first Law of Motion</p>
           </div>
         </div>
         <div className=' bg-[#F9FAFB] p-3 rounded-lg mt-2'>
-          <div className='mt-2'>
+          <div className='mt-1'>
             <p className='text-blue-500 text-sm'>Assisstant</p>
             <p className='text-xs text-gray-600'> Newtons first Law of Motion is a very unique law. it was introduced by Isaac Newton</p>
           </div>
