@@ -9,8 +9,8 @@ export default function VirtualClassroom() {
 
   return (
     <div className='flex flex-row bg-amber-300'>
-      <div className="bg-white w-full">
-        {/* Top Navigation Bar */}
+      <div className="bg-white w-full h-[90vh]">
+
 
 
         {/* Main Content Area */}
@@ -20,35 +20,100 @@ export default function VirtualClassroom() {
               {/* Main Content Frame */}
               <button
                 onClick={() => setActiveTab('whiteboard')}
-                className={`flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'whiteboard'
+                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'whiteboard'
                   ? 'bg-gray-800 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
               >
-                <div className="w-2.5 h-2.5 bg-white rounded-full cursor-pointer"></div>
                 <span className='text-xs'>Whiteboard</span>
               </button>
               <button
-                onClick={() => setActiveTab('whiteboard')}
-                className={`flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'whiteboard'
+                onClick={() => setActiveTab('Quiz')}
+                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'Quiz'
                   ? 'bg-gray-800 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
               >
-                <div className="w-2.5 h-2.5 bg-white rounded-full cursor-pointer"></div>
+                <span className='text-xs'>Quiz</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('Browser')}
+                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'Browser'
+                  ? 'bg-gray-800 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+              >
                 <span className='text-xs'>Browser</span>
               </button>
             </div>
             <div className="relative bg-gray-100 border-2 border-dashed border-[#CBCBCB] rounded-lg h-[65vh]">
               {/* Content Area */}
-              {activeTab === 'whiteboard' ? (
+              {activeTab === 'whiteboard' && (
                 <ExcalidrawCanvas />
-              ) : (
+              )}
+              {activeTab === 'Quiz' && (
+                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 max-w-3xl mx-auto h-full">
+                  <div className="flex items-center mb-4 flex-row">
+                    <div className="flex items-center">
+                      <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">
+                        <span>1</span>
+                      </div>
+                      <h2 className="text-md font-medium">Linear Equations Quiz</h2>
+                    </div>
+                    <div className="ml-auto text-xs text-gray-500">Question 2 of 5</div>
+                    <div className="ml-4 w-1/3 bg-gray-200 rounded-full h-3">
+                      <div className="bg-green-500 h-full rounded-full" style={{ width: '40%' }}></div>
+                    </div>
+                  </div>
+
+
+
+                  <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                    <div className="flex items-center mb-2">
+                      <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">
+                        <span>2</span>
+                      </div>
+                      <h3 className="text-sm font-medium">Solve the System of Equations</h3>
+                    </div>
+                    <p className="text-xs mb-2">Find the values of x and y that satisfy both equations:</p>
+                    <div className="bg-white p-3 rounded border border-gray-200">
+                      <p className="font-mono text-xs">2x + 3y = 12</p>
+                      <p className="font-mono text-xs">x - y = 3</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <label className="flex items-center p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <input type="radio" name="answer" className="mr-3" />
+                      <span className="mr-2 font-medium">A</span>
+                      <span>x = 3, y = 2</span>
+                    </label>
+
+                    <label className="flex items-center p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <input type="radio" name="answer" className="mr-3" />
+                      <span className="mr-2 font-medium">B</span>
+                      <span>x = 4, y = 1</span>
+                    </label>
+
+                    <label className="flex items-center p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <input type="radio" name="answer" className="mr-3" />
+                      <span className="mr-2 font-medium">C</span>
+                      <span>x = 6, y = 0</span>
+                    </label>
+                  </div>
+                </div>
+              )}
+              {activeTab === 'Browser' && (
                 <div className="text-center text-gray-500 mt-20">
                   <div className="text-4xl font-bold mb-4">Browser</div>
                   <p className="text-lg">Your browser view will appear here</p>
                 </div>
               )}
+
+
+
+
+              {/* currently working on this above code */}
             </div>
           </div>
           <div className="flex w-full mt-2">
@@ -84,17 +149,17 @@ export default function VirtualClassroom() {
             <p className='text-xs text-gray-600'> Newtons first Law of Motion is a very unique law. it was introduced by Isaac Newton</p>
           </div>
         </div>
-      <div className='mt-auto w-full'>
-        <h1 className='text-sm'>Action buttons</h1>
-        <div className='flex flex-wrap text-xs'>
-          <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Repeat</div>
-          <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Simplify</div>
-          <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Examples</div>
-          <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Diagram</div>
-          <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Samarize</div>
-          <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Quiz</div>
+        <div className='mt-auto w-full'>
+          <h1 className='text-sm'>Action buttons</h1>
+          <div className='flex flex-wrap text-xs'>
+            <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Repeat</div>
+            <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Simplify</div>
+            <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Examples</div>
+            <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Diagram</div>
+            <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Samarize</div>
+            <div className='w-1/2 border-1 border-[#DADADA] rounded-sm py-1.5 px-1 mb-1'>Quiz</div>
+          </div>
         </div>
-      </div>
       </div>
     </div>
 
