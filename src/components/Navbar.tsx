@@ -25,8 +25,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-[7.5vh]">
           {/* Logo */}
-          <div className="flex-shrink-0 font-extrabold text-2xl">
-          <h3>Classroom AI</h3>
+          <div className="font-medium text-md flex flex-row items-center space-x-4">
+            <h3>Classroom AI</h3>
+            <div className="flex items-center">
+              <Image
+                src="/book.svg"
+                alt="Book Icon"
+                width={22}
+                height={22}
+                className="inline-block mr-1.5"
+              />
+              <p className='text-xs text-slate-600'>Algebra - Linear Equations</p>
+            </div>
           </div>
 
           {/* User Profile and Dropdown */}
@@ -44,27 +54,27 @@ export default function Navbar() {
                     width={32}
                     height={32}
                     className="w-full h-full object-cover"
-                    
+
                   />
                   {/* Fallback placeholder */}
                   <div className="w-full h-full bg-blue-600 flex items-center justify-center text-white text-sm font-medium">
                     <span>U</span>
                   </div>
                 </div>
-                
+
                 {/* Dropdown Arrow */}
                 <div className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors duration-200">
-                  <svg 
-                    className={`h-3 w-3 text-gray-600 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`h-3 w-3 text-gray-600 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M19 9l-7 7-7-7" 
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
                     />
                   </svg>
                 </div>
