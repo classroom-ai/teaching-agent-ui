@@ -1,26 +1,71 @@
 'use client';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+/* import all the icons in Free Solid, Free Regular, and Brands styles */
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-
+library.add(fas, far, fab)
 import { useState } from 'react';
 import ExcalidrawCanvas from './ExcalidrawCanvas'; // adjust path if needed
 
+
+const Quiz = [
+  {
+    Qno:1,
+    Question:"Solve the System of Equations",
+    SubQuestion:"Find the values of x and y that satisfy both equations:",
+    Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
+    CorrectAnswer:"x=2, y=3"
+  },
+  {
+    Qno:2,
+    Question:"Solve the System of Equations",
+    SubQuestion:"Find the values of x and y that satisfy both equations:",
+    Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
+    CorrectAnswer:"x=2, y=3"
+  },
+  {
+    Qno:3,
+    Question:"Solve the System of Equations",
+    SubQuestion:"Find the values of x and y that satisfy both equations:",
+    Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
+    CorrectAnswer:"x=2, y=3"
+  },
+  {
+    Qno:4,
+    Question:"Solve the System of Equations",
+    SubQuestion:"Find the values of x and y that satisfy both equations:",
+    Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
+    CorrectAnswer:"x=2, y=3"
+  },
+  {
+    Qno:5,
+    Question:"Solve the System of Equations",
+    SubQuestion:"Find the values of x and y that satisfy both equations:",
+    Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
+    CorrectAnswer:"x=2, y=3"
+  },
+
+]
 export default function VirtualClassroom() {
   const [activeTab, setActiveTab] = useState('whiteboard');
 
   return (
-    <div className='flex flex-row bg-amber-300'>
-      <div className="bg-white w-full h-[90vh]">
+    <div className='flex flex-row bg-[#F9FAFB]'>
+      <div className="bg-white rounded-xl mx-1.5 mt-3 w-full h-[85vh]">
 
 
 
         {/* Main Content Area */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-6 shadow-lg">
           <div className="max-w-6xl mx-auto">
             <div className='flex space-x-4 mb-1.5'>
               {/* Main Content Frame */}
               <button
                 onClick={() => setActiveTab('whiteboard')}
-                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'whiteboard'
+                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-md font-medium transition-all duration-200 ${activeTab === 'whiteboard'
                   ? 'bg-gray-800 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
@@ -29,7 +74,7 @@ export default function VirtualClassroom() {
               </button>
               <button
                 onClick={() => setActiveTab('Quiz')}
-                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'Quiz'
+                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-md font-medium transition-all duration-200 ${activeTab === 'Quiz'
                   ? 'bg-gray-800 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
@@ -38,7 +83,7 @@ export default function VirtualClassroom() {
               </button>
               <button
                 onClick={() => setActiveTab('Browser')}
-                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-lg font-medium transition-all duration-200 ${activeTab === 'Browser'
+                className={`cursor-pointer flex py-1.5 items-center space-x-2 px-4 rounded-md font-medium transition-all duration-200 ${activeTab === 'Browser'
                   ? 'bg-gray-800 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
@@ -46,7 +91,7 @@ export default function VirtualClassroom() {
                 <span className='text-xs'>Browser</span>
               </button>
             </div>
-            <div className="relative bg-gray-100 border-2 border-dashed border-[#CBCBCB] rounded-lg h-[65vh]">
+            <div className="relative bg-gray-100 border-2 border-dashed border-[#CBCBCB] rounded-lg h-[end]">
               {/* Content Area */}
               {activeTab === 'whiteboard' && (
                 <ExcalidrawCanvas />
@@ -55,9 +100,7 @@ export default function VirtualClassroom() {
                 <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 max-w-3xl mx-auto h-full">
                   <div className="flex items-center mb-4 flex-row">
                     <div className="flex items-center">
-                      <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                        <span>1</span>
-                      </div>
+                      <FontAwesomeIcon icon={['fas', 'clipboard-list']} className="mr-2" />
                       <h2 className="text-md font-medium">Linear Equations Quiz</h2>
                     </div>
                     <div className="ml-auto text-xs text-gray-500">Question 2 of 5</div>
@@ -70,7 +113,7 @@ export default function VirtualClassroom() {
 
                   <div className="bg-blue-50 rounded-lg p-4 mb-6">
                     <div className="flex items-center mb-2">
-                      <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">
+                      <div className="bg-black text-white rounded-full w-6 h-6 text-xs font-black flex items-center justify-center mr-2">
                         <span>2</span>
                       </div>
                       <h3 className="text-sm font-medium">Solve the System of Equations</h3>
@@ -86,21 +129,24 @@ export default function VirtualClassroom() {
                     <label className="flex items-center p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <input type="radio" name="answer" className="mr-3" />
                       <span className="mr-2 font-medium">A</span>
-                      <span>x = 3, y = 2</span>
+                      <span>{Quiz[1].Options[0]}</span>
                     </label>
 
                     <label className="flex items-center p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <input type="radio" name="answer" className="mr-3" />
                       <span className="mr-2 font-medium">B</span>
-                      <span>x = 4, y = 1</span>
+                      <span>{Quiz[1].Options[1]}</span>
                     </label>
 
                     <label className="flex items-center p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <input type="radio" name="answer" className="mr-3" />
                       <span className="mr-2 font-medium">C</span>
-                      <span>x = 6, y = 0</span>
+                      <span>{Quiz[1].Options[2]}</span>
                     </label>
                   </div>
+            <button className="cursor-pointer bg-black text-sm text-white px-4 py-1.5 rounded-lg float-right my-3">
+              Notes
+            </button>
                 </div>
               )}
               {activeTab === 'Browser' && (
@@ -113,7 +159,6 @@ export default function VirtualClassroom() {
 
 
 
-              {/* currently working on this above code */}
             </div>
           </div>
           <div className="flex w-full mt-2">
@@ -132,7 +177,7 @@ export default function VirtualClassroom() {
         {/* Right Side - Raise Hand Button */}
 
       </div>
-      <div className='w-80 bg-white border-l border-gray-300 p-4 flex flex-col'>
+      <div className='w-80 bg-white border-l border-gray-300 p-4 flex flex-col mt-3 mx-1.5 rounded-xl shadow-lg'>
         <div className=''>
           <h1>Live transcript</h1>
 
