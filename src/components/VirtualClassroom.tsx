@@ -1,3 +1,4 @@
+// VirtualClassroom.tsx
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -21,28 +22,28 @@ const Quiz = [
   },
   {
     Qno:2,
-    Question:"Solve the System of Equations",
+    Question:"Solve the System of Equations. This is Q 2",
     SubQuestion:"Find the values of x and y that satisfy both equations:",
     Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
     CorrectAnswer:"x=2, y=3"
   },
   {
     Qno:3,
-    Question:"Solve the System of Equations",
+    Question:"Solve the System of Equations, dddd",
     SubQuestion:"Find the values of x and y that satisfy both equations:",
     Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
     CorrectAnswer:"x=2, y=3"
   },
   {
     Qno:4,
-    Question:"Solve the System of Equations",
+    Question:"Solve the System of Equationsnddkjjjd",
     SubQuestion:"Find the values of x and y that satisfy both equations:",
     Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
     CorrectAnswer:"x=2, y=3"
   },
   {
     Qno:5,
-    Question:"Solve the System of Equations",
+    Question:"Solve the System of Equationsddddddddddddddd",
     SubQuestion:"Find the values of x and y that satisfy both equations:",
     Options:["x=2, y=3", "x=3, y=2", "x=4, y=1"],
     CorrectAnswer:"x=2, y=3"
@@ -155,15 +156,11 @@ export default function VirtualClassroom() {
                   <p className="text-lg">Your browser view will appear here</p>
                 </div>
               )}
-
-
-
-
             </div>
           </div>
           <div className="flex w-full mt-2">
             <button className="cursor-pointer mr-2.5 bg-black text-sm text-white px-4 py-1.5 rounded-lg transition-colors duration-200">
-              Recording
+              Microphone
             </button>
             <button className="cursor-pointer mr-2.5 bg-black text-sm text-white px-4 py-1.5 rounded-lg transition-colors duration-200">
               Notes
