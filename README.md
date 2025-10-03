@@ -74,6 +74,4 @@ We welcome contributions to this project! If you're interested in helping out, p
 
 ## Contact
 
-Your Name/Team Name - [your.email@example.com](mailto:your.email@example.com)
-
-Project Link: [https://github.com/your-username/your-repo-name](https://github.com/your-username/your-repo-name)
+Your Name/Team Name - [your.email@example.com](mailto:faseehkamboh9933@gmail.com)
