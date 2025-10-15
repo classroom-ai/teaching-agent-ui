@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Ubuntu, Nunito, Rubik } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
@@ -47,7 +46,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${ubuntu.variable} ${nunito.variable} ${rubik.variable} antialiased`}
       >
-        <Navbar />
         {children}
         <Analytics />
       </body>
