@@ -15,40 +15,39 @@ import ExcalidrawCanvas from './ExcalidrawCanvas'; // adjust path if needed
 const Quiz = [
   {
     Qno: 1,
-    Question: "Solve the System of Equations",
-    SubQuestion: "Find the values of x and y that satisfy both equations:",
-    Options: ["x=2, y=3", "x=3, y=2", "x=4, y=1"],
-    CorrectAnswer: "x=2, y=3"
+    Question: "Which Azure CNI network configuration allows direct pod communication with resources in an Azure Virtual Network without NAT?",
+    SubQuestion: "",
+    Options: ["Kubenet", "Azure CNI with dynamic IP allocation", "Azure CNI with static IP allocation", "Overlay networking"],
+    CorrectAnswer: "Azure CNI with dynamic IP allocation"
   },
   {
     Qno: 2,
-    Question: "Solve the System of Equations. This is Q 2",
-    SubQuestion: "Find the values of x and y that satisfy both equations:",
-    Options: ["x=2, y=3", "x=3, y=2", "x=4, y=1"],
-    CorrectAnswer: "x=2, y=3"
+    Question: "An expert cloud engineer needs to ensure that specific, highly sensitive pods are isolated to dedicated nodes in AKS. Which combination of Kubernetes features should be primarily utilized?",
+    SubQuestion: "",
+    Options: ["Node selectors and tolerations", "Taints and node affinities", "Resource quotas and limit ranges", "Network policies and service meshes"],
+    CorrectAnswer: "Taints and node affinities"
   },
   {
     Qno: 3,
-    Question: "Solve the System of Equations, dddd",
-    SubQuestion: "Find the values of x and y that satisfy both equations:",
-    Options: ["x=2, y=3", "x=3, y=2", "x=4, y=1"],
-    CorrectAnswer: "x=2, y=3"
+    Question: "When performing a zero-downtime application upgrade on AKS, which deployment strategy introduces the new version to a small subset of users before a full rollout?",
+    SubQuestion: "",
+    Options: ["Rolling Update", "Blue-Green Deployment", "Canary Release", "Recreate Deployment"],
+    CorrectAnswer: "Canary Release"
   },
   {
     Qno: 4,
-    Question: "Solve the System of Equationsnddkjjjd",
-    SubQuestion: "Find the values of x and y that satisfy both equations:",
-    Options: ["x=2, y=3", "x=3, y=2", "x=4, y=1"],
-    CorrectAnswer: "x=2, y=3"
+    Question: "Which of the following is a key benefit of integrating Azure Active Directory with AKS for Kubernetes RBAC?",
+    SubQuestion: "",
+    Options: ["Automated container image scanning", "Centralized identity management and consistent access policies", "Reduced network latency for inter-pod communication", "Automatic scaling of node pools"],
+    CorrectAnswer: "Centralized identity management and consistent access policies"
   },
   {
     Qno: 5,
-    Question: "Solve the System of Equationsddddddddddddddd",
-    SubQuestion: "Find the values of x and y that satisfy both equations:",
-    Options: ["x=2, y=3", "x=3, y=2", "x=4, y=1"],
-    CorrectAnswer: "x=2, y=3"
-  },
-
+    Question: "To effectively implement Horizontal Pod Autoscaler (HPA) in AKS, what crucial component must be deployed and running in the cluster to provide metric data?",
+    SubQuestion: "",
+    Options: ["Kube-state-metrics", "Prometheus", "Metrics Server", "Azure Monitor Agent"],
+    CorrectAnswer: "Metrics Server"
+  }
 ]
 export default function VirtualClassroom() {
   const [activeTab, setActiveTab] = useState('whiteboard');
@@ -75,13 +74,12 @@ export default function VirtualClassroom() {
   };
 
   return (
-    <div className='flex flex-row bg-[#F9FAFB]'>
-      <div className="bg-white rounded-xl mx-1.5 mt-3 w-full h-[85vh]">
-
+    <div className='flex flex-row bg-slate-100 text-slate-950 h-[92.5vh]'>
+      <div className=" rounded-xl mx-1.5 mt-3 w-full h-[88vh] bg-white shadow-2xl">
 
 
         {/* Main Content Area */}
-        <div className="flex-1 p-6 shadow-lg">
+        <div className="flex-1 px-6 pt-2.5">
           <div className="max-w-6xl mx-auto">
             <div className='flex space-x-4 mb-1.5'>
               {/* Main Content Frame */}
@@ -113,17 +111,17 @@ export default function VirtualClassroom() {
                 <span className='text-xs' style={{ fontFamily: 'var(--font-ubuntu)' }}>Browser</span>
               </button>
             </div>
-            <div className="relative bg-gray-100 border-2 border-dashed border-[#CBCBCB] rounded-lg h-[end]">
+            <div className="relative bg-gray-100 border-2 border-dashed border-[#CBCBCB] rounded-lg h-full">
               {/* Content Area */}
               {activeTab === 'whiteboard' && (
                 <ExcalidrawCanvas />
               )}
               {activeTab === 'Quiz' && (
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 w-full mx-auto h-full">
-                  <div className="flex items-center mb-4 flex-row mx-4">
+                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 w-full mx-auto h-[70vh] overflow-y-auto">
+                  <div className="flex items-center flex-row mx-4">
                     <div className="flex items-center">
                       <FontAwesomeIcon icon={['fas', 'clipboard-list']} className="mr-2" />
-                      <h2 className="text-md font-medium" style={{ fontFamily: 'var(--font-ubuntu)' }}>Linear Equations Quiz</h2>
+                      <h2 className="text-md font-medium" style={{ fontFamily: 'var(--font-ubuntu)' }}>AKS- Quiz</h2>
                     </div>
                     <div className="ml-auto text-xs text-gray-500" style={{ fontFamily: 'var(--font-nunito)' }} >Question {currentQuestionIndex + 1} of {Quiz.length}</div>
                     <div className="ml-4 w-1/3 bg-gray-200 rounded-full h-3">
@@ -162,8 +160,8 @@ export default function VirtualClassroom() {
                       </label>
                     ))}
                   </div>
-                  <div className='mb-3'>
-                  <button onClick={handleNextQuestion} disabled={selectedOptionIndex === null} className={`cursor-pointer bg-black text-sm text-white px-4 py-1.5 rounded-lg float-right inline-flex items-center ${selectedOptionIndex === null ? 'opacity-50 cursor-not-allowed' : ''}`}style={{ fontFamily: 'var(--font-rubik)' }}>
+                  <div className='my-1 flex justify-end'>
+                  <button onClick={handleNextQuestion} disabled={selectedOptionIndex === null} className={`cursor-pointer bg-black text-sm text-white px-4 py-1.5 rounded-lg inline-flex items-center ${selectedOptionIndex === null ? 'opacity-50 cursor-not-allowed' : ''}`}style={{ fontFamily: 'var(--font-rubik)' }}>
                     {currentQuestionIndex < Quiz.length - 1 ? 'Next Question' : 'Finish'} <FontAwesomeIcon className='ml-1 ' icon={['fas', 'arrow-right']} />
                   </button>
                   </div>
@@ -193,7 +191,7 @@ export default function VirtualClassroom() {
         {/* Right Side - Raise Hand Button */}
 
       </div>
-      <div className='w-80 bg-white border-l border-gray-300 p-4 flex flex-col mt-3 mx-1.5 rounded-xl shadow-lg'>
+      <div className='w-80 bg-white border-l border-gray-300 p-4 flex flex-col mt-3 mx-1.5 rounded-xl shadow-lg h-[88vh]'>
         <div className='' style={{ fontFamily: 'var(--font-ubuntu)', fontWeight: 500 }}>
           <h1>Live transcript</h1>
 
@@ -206,7 +204,7 @@ export default function VirtualClassroom() {
         </div>
         <div className=' bg-[#F9FAFB] p-3 rounded-lg mt-2'>
           <div className='mt-1'>
-            <p className='text-blue-500 text-sm'style={{ fontFamily: 'var(--font-rubik)', fontWeight: 500 }}>Assisstant</p>
+            <p className='text-blue-500 text-sm'style={{ fontFamily: 'var(--font-rubik)', fontWeight: 500 }}>Teacher</p>
             <p className='text-xs text-gray-600' style={{ fontFamily: 'var(--font-nunito)' }}> Newtons first Law of Motion is a very unique law. it was introduced by Isaac Newton</p>
           </div>
         </div>
