@@ -26,8 +26,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-[7.5vh]">
           {/* Logo */}
-          <div className="font-medium text-md flex flex-row items-center space-x-4">
-            <h3>Classroom AI</h3>
+          <div className="text-xl flex flex-row items-center space-x-4 text-slate-950 font-extrabold">
+            <h3 style={{ fontFamily: 'var(--font-nunito)' }}>Classroom AI</h3>
             <div className="flex items-center">
               <Image
                 src="/book.svg"
@@ -36,7 +36,7 @@ export default function Navbar() {
                 height={22}
                 className="inline-block mr-1.5"
               />
-              <p className='text-xs text-slate-600'>Algebra - Linear Equations</p>
+              <p className='text-xs text-slate-600'>Cloud Engineering - Kubernetes</p>
             </div>
           </div>
 
