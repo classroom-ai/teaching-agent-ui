@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import '@excalidraw/excalidraw/index.css';
+import { useState } from 'react';
 
 const Excalidraw = dynamic(
   async () => (await import('@excalidraw/excalidraw')).Excalidraw,
@@ -9,24 +10,21 @@ const Excalidraw = dynamic(
 );
 
 export default function ExcalidrawCanvas() {
+  const [initialState] = useState({
+    elements: [],
+    appState: {
+      viewBackgroundColor: '#ffffff',
+    },
+  });
+
+  const saveToServer = (elements: any, appState: any) => {
+    // Handle saving to server
+    console.log('Saving to server:', elements, appState);
+  };
+
   return (
-    <div style={{ height: "71vh",padding:"1.5" }}>
-      <Excalidraw>
-        {/* <WelcomeScreen>
-          <WelcomeScreen.Center>
-            <WelcomeScreen.Center.Logo />
-            <WelcomeScreen.Center.Heading>
-              Welcome Screen Heading!
-            </WelcomeScreen.Center.Heading>
-            <WelcomeScreen.Center.Menu>
-              <WelcomeScreen.Center.MenuItemLink href="https://github.com/excalidraw/excalidraw">
-                Excalidraw GitHub
-              </WelcomeScreen.Center.MenuItemLink>
-              <WelcomeScreen.Center.MenuItemHelp />
-            </WelcomeScreen.Center.Menu>
-          </WelcomeScreen.Center>
-        </WelcomeScreen> */}
-      </Excalidraw>
+    <div style={{ height: "71vh", }}>
+      <Excalidraw initialData={initialState} onChange={saveToServer} />
     </div>
   );
 } 

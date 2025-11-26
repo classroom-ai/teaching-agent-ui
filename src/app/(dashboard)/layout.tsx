@@ -1,4 +1,5 @@
 import DashboardSidebar from "@/components/DashboardSidebar";
+import Nav from "@/components/Nav";
 
 export default function DashboardLayout({
   children,
@@ -8,7 +9,10 @@ export default function DashboardLayout({
   return (
     <div className="flex bg-slate-950 min-h-screen">
       <DashboardSidebar />
-      {children}
+      <div className="flex-1 flex flex-col">
+        <Nav />
+        {children}
+      </div>
     </div>
   );
 }

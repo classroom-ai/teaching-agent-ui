@@ -9,7 +9,7 @@ export default function DashboardSidebar() {
       </div>
       <nav className="flex-1 p-2 text-sm">
         <Link className="block px-3 py-2 rounded hover:bg-slate-800" href="/">Dashboard</Link>
-        <Link className="block px-3 py-2 rounded bg-slate-800 mt-1" href="/">Syllabus</Link>
+        <Link className="block px-3 py-2 rounded hover:bg-slate-800 mt-1" href="/syllabus">Syllabus</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-800 mt-1" href="/performance">My Performance</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-800 mt-1" href="/books">Books</Link>
         <Link className="block px-3 py-2 rounded hover:bg-slate-800 mt-1" href="/classes">Classes</Link>
