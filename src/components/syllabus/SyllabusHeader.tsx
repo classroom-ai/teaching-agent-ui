@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/Button/button';
+import { Button } from '@/components/ui/Button/Button';
 import { User, Users, Clock, Play } from 'lucide-react';
 
 interface SyllabusHeaderProps {

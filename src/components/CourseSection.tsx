@@ -13,7 +13,7 @@ import {
   List,
   ChevronDown,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button/button';
+import { Button } from '@/components/ui/Button/Button';
 import { cn } from '@/lib/utils';
 
 const COURSES = [

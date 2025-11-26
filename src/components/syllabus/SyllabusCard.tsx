@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/Button/button';
+import { Button } from '@/components/ui/Button/Button';
 import { cn } from '@/lib/utils';
 import { LucideIcon, Play, Clock, FileText, CheckCircle, Lock } from 'lucide-react';
 

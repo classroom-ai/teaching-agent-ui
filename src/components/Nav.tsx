@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { Button } from '@/components/ui/Button/button';
+import { Button } from '@/components/ui/Button/Button';
 import { Sun, Moon, Bell, Search } from 'lucide-react';
 import Image from 'next/image';
 

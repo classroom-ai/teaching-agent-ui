@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/Button/button';
+import { Button } from '@/components/ui/Button/Button';
 import { Trophy, Rocket } from 'lucide-react';
 
 export function MotivationBanner() {
