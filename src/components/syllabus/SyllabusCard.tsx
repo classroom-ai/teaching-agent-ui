@@ -29,16 +29,16 @@ export function SyllabusCard({
       case 'in-progress':
         return 'text-blue-500 bg-blue-500/10 border-blue-500/20';
       case 'locked':
-        return 'text-slate-500 bg-slate-800/50 border-slate-800';
+        return 'text-muted-foreground bg-muted/50 border-border';
       default:
-        return 'text-slate-400 bg-slate-800/30 border-slate-800';
+        return 'text-muted-foreground bg-muted/30 border-border';
     }
   };
 
   const statusColor = getStatusColor();
 
   return (
-    <div className="group bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/50 flex flex-col h-full">
+    <div className="group bg-card border border-border rounded-xl p-5 hover:border-border/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 flex flex-col h-full">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-3">
@@ -51,10 +51,10 @@ export function SyllabusCard({
             <Icon className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-semibold text-white group-hover:text-blue-400 transition-colors">
+            <h3 className="font-semibold text-card-foreground group-hover:text-primary transition-colors">
               {title}
             </h3>
-            <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+            <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
               {description}
             </p>
           </div>
@@ -72,13 +72,13 @@ export function SyllabusCard({
           </div>
         )}
         {status === 'locked' && (
-          <div className="flex items-center gap-1 text-xs font-medium text-slate-500 bg-slate-800 px-2 py-1 rounded-full">
+          <div className="flex items-center gap-1 text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-full">
             <Lock className="w-3 h-3" />
             Locked
           </div>
         )}
         {status === 'not-started' && (
-          <div className="flex items-center gap-1 text-xs font-medium text-slate-400 bg-slate-800 px-2 py-1 rounded-full">
+          <div className="flex items-center gap-1 text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-full">
             <Clock className="w-3 h-3" />
             Not Started
           </div>
@@ -87,19 +87,19 @@ export function SyllabusCard({
 
       {/* Progress Bar */}
       <div className="space-y-2 mb-6">
-        <div className="flex justify-between text-xs text-slate-400">
+        <div className="flex justify-between text-xs text-muted-foreground">
           <span>Progress</span>
           <span>{progress}%</span>
         </div>
-        <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+        <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
           <div
             className={cn(
               'h-full rounded-full transition-all duration-500',
               status === 'completed'
                 ? 'bg-green-500'
                 : status === 'in-progress'
-                ? 'bg-blue-500'
-                : 'bg-slate-700'
+                ? 'bg-primary'
+                : 'bg-muted-foreground/30'
             )}
             style={{ width: `${progress}%` }}
           />
@@ -108,7 +108,7 @@ export function SyllabusCard({
 
       <div className="mt-auto space-y-4">
         {/* Metadata */}
-        <div className="flex items-center gap-4 text-xs text-slate-400">
+        <div className="flex items-center gap-4 text-xs text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5" />
             {time}
@@ -125,7 +125,7 @@ export function SyllabusCard({
             <>
               <Button
                 variant="outline"
-                className="flex-1 bg-slate-800 border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 h-9 text-xs"
+                className="flex-1 bg-muted border-border text-muted-foreground hover:text-foreground hover:bg-accent h-9 text-xs"
               >
                 Review
               </Button>
@@ -140,7 +140,7 @@ export function SyllabusCard({
             <>
               <Button
                 variant="outline"
-                className="flex-1 bg-slate-800 border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 h-9 text-xs"
+                className="flex-1 bg-muted border-border text-muted-foreground hover:text-foreground hover:bg-accent h-9 text-xs"
               >
                 Notes
               </Button>
@@ -153,13 +153,13 @@ export function SyllabusCard({
               <Button
                 variant="outline"
                 disabled
-                className="flex-1 bg-slate-800/50 border-slate-800 text-slate-500 h-9 text-xs"
+                className="flex-1 bg-muted/50 border-border text-muted-foreground h-9 text-xs"
               >
                 Preview
               </Button>
               <Button
                 disabled
-                className="flex-1 bg-slate-800 border-slate-800 text-slate-500 h-9 text-xs"
+                className="flex-1 bg-muted border-border text-muted-foreground h-9 text-xs"
               >
                 Start Learning
               </Button>
@@ -168,11 +168,11 @@ export function SyllabusCard({
             <>
               <Button
                 variant="outline"
-                className="flex-1 bg-slate-800 border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 h-9 text-xs"
+                className="flex-1 bg-muted border-border text-muted-foreground hover:text-foreground hover:bg-accent h-9 text-xs"
               >
                 Preview
               </Button>
-              <Button className="flex-1 bg-slate-700 hover:bg-blue-600 text-white border-none h-9 text-xs transition-colors">
+              <Button className="flex-1 bg-secondary hover:bg-primary text-secondary-foreground hover:text-primary-foreground border-none h-9 text-xs transition-colors">
                 Start Learning
               </Button>
             </>

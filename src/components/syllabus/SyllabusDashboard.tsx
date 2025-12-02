@@ -90,14 +90,14 @@ export function SyllabusDashboard() {
         <div className="flex items-center gap-3">
           <Button
             variant="outline"
-            className="bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white min-w-[140px] justify-between h-9"
+            className="bg-muted border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground min-w-[140px] justify-between h-9"
           >
             All Subjects
             <ChevronDown className="w-4 h-4 ml-2 opacity-50" />
           </Button>
           <Button
             variant="outline"
-            className="bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white min-w-[140px] justify-between h-9"
+            className="bg-muted border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground min-w-[140px] justify-between h-9"
           >
             By Progress
             <ChevronDown className="w-4 h-4 ml-2 opacity-50" />
@@ -106,13 +106,13 @@ export function SyllabusDashboard() {
 
         <div className="flex items-center gap-2">
           <span className="text-sm text-slate-400 mr-2">View:</span>
-          <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-lg border border-slate-800">
+          <div className="flex items-center gap-1 bg-muted p-1 rounded-lg border border-border">
             <button
               onClick={() => setView('grid')}
               className={`p-1.5 rounded-md transition-colors ${
                 view === 'grid'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-accent'
               }`}
             >
               <LayoutGrid className="w-4 h-4" />
@@ -121,8 +121,8 @@ export function SyllabusDashboard() {
               onClick={() => setView('list')}
               className={`p-1.5 rounded-md transition-colors ${
                 view === 'list'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-accent'
               }`}
             >
               <List className="w-4 h-4" />

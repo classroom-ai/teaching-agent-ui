@@ -107,9 +107,9 @@ export function CourseSection() {
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-6 bg-blue-500 rounded-full" />
-            <h2 className="text-2xl font-bold text-white">Modern Courses</h2>
+            <h2 className="text-2xl font-bold text-foreground">Modern Courses</h2>
           </div>
-          <p className="text-slate-400">
+          <p className="text-muted-foreground">
             Explore AI-powered courses designed for your success
           </p>
         </div>
@@ -118,13 +118,13 @@ export function CourseSection() {
         <div className="flex flex-wrap items-center gap-3">
           <Button
             variant="outline"
-            className="bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white min-w-[140px] justify-between"
+            className="bg-muted border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground min-w-[140px] justify-between"
           >
             All Courses
             <ChevronDown className="w-4 h-4 ml-2 opacity-50" />
           </Button>
 
-          <div className="bg-slate-900 p-1 rounded-lg border border-slate-800 flex items-center">
+          <div className="bg-muted p-1 rounded-lg border border-border flex items-center">
             {(['All', 'Beginner', 'Intermediate', 'Advanced'] as Level[]).map(
               (filter) => (
                 <button
@@ -133,8 +133,8 @@ export function CourseSection() {
                   className={cn(
                     'px-4 py-1.5 rounded-md text-sm font-medium transition-all duration-200',
                     activeFilter === filter
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/20'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                   )}
                 >
                   {filter}
@@ -143,11 +143,11 @@ export function CourseSection() {
             )}
           </div>
 
-          <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-lg border border-slate-800">
-            <button className="p-2 rounded-md bg-slate-800 text-white">
+          <div className="flex items-center gap-1 bg-muted p-1 rounded-lg border border-border">
+            <button className="p-2 rounded-md bg-background text-foreground shadow-sm">
               <LayoutGrid className="w-4 h-4" />
             </button>
-            <button className="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+            <button className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
               <List className="w-4 h-4" />
             </button>
           </div>

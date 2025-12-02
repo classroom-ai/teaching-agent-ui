@@ -20,7 +20,7 @@ export function SyllabusHeader({
   isLive = false,
 }: SyllabusHeaderProps) {
   return (
-    <div className="bg-[#0F172A] border border-blue-900/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl shadow-blue-900/10">
+    <div className="bg-card border border-border rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl shadow-blue-900/10">
       {/* Background Glows */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-600/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none" />
@@ -33,13 +33,13 @@ export function SyllabusHeader({
         )}
 
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold text-white tracking-tight">
+          <h1 className="text-3xl font-bold text-foreground tracking-tight">
             {title}
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl">{description}</p>
+          <p className="text-muted-foreground text-lg max-w-2xl">{description}</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+        <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <User className="w-4 h-4 text-slate-500" />
             <span>{instructor}</span>

@@ -109,7 +109,7 @@ export function ResourcesSection() {
       <section>
         <div className="flex items-center gap-2 mb-6">
           <BookOpen className="w-6 h-6 text-blue-500" />
-          <h2 className="text-xl font-bold text-white">Books Shelf</h2>
+          <h2 className="text-xl font-bold text-foreground">Books Shelf</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {BOOKS.map((book) => (
@@ -122,7 +122,7 @@ export function ResourcesSection() {
       <section>
         <div className="flex items-center gap-2 mb-6">
           <Video className="w-6 h-6 text-red-500" />
-          <h2 className="text-xl font-bold text-white">Videos Bucket</h2>
+          <h2 className="text-xl font-bold text-foreground">Videos Bucket</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {VIDEOS.map((video) => (
@@ -135,7 +135,7 @@ export function ResourcesSection() {
       <section>
         <div className="flex items-center gap-2 mb-6">
           <LinkIcon className="w-6 h-6 text-green-500" />
-          <h2 className="text-xl font-bold text-white">Useful Links</h2>
+          <h2 className="text-xl font-bold text-foreground">Useful Links</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {LINKS.map((link) => (

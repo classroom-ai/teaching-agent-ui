@@ -23,8 +23,8 @@ const data = [
 
 export function PerformanceChart() {
   return (
-    <div className="w-full h-[400px] bg-slate-900/50 border border-slate-800 rounded-xl p-6">
-      <h3 className="text-lg font-semibold text-white mb-6">
+    <div className="w-full h-[400px] bg-card/50 border border-border rounded-xl p-6">
+      <h3 className="text-lg font-semibold text-foreground mb-6">
         Learning Progress
       </h3>
       <div className="w-full h-[300px]">
@@ -38,26 +38,26 @@ export function PerformanceChart() {
               bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis
               dataKey="name"
-              stroke="#64748b"
-              tick={{ fill: '#64748b' }}
-              tickLine={{ stroke: '#64748b' }}
+              stroke="var(--muted-foreground)"
+              tick={{ fill: 'var(--muted-foreground)' }}
+              tickLine={{ stroke: 'var(--muted-foreground)' }}
             />
             <YAxis
-              stroke="#64748b"
-              tick={{ fill: '#64748b' }}
-              tickLine={{ stroke: '#64748b' }}
+              stroke="var(--muted-foreground)"
+              tick={{ fill: 'var(--muted-foreground)' }}
+              tickLine={{ stroke: 'var(--muted-foreground)' }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#0f172a',
-                border: '1px solid #1e293b',
+                backgroundColor: 'var(--popover)',
+                border: '1px solid var(--border)',
                 borderRadius: '8px',
-                color: '#f8fafc',
+                color: 'var(--popover-foreground)',
               }}
-              itemStyle={{ color: '#f8fafc' }}
+              itemStyle={{ color: 'var(--popover-foreground)' }}
             />
             <Line
               type="monotone"
