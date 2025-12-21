@@ -85,51 +85,7 @@ export function SyllabusDashboard() {
 
   return (
     <div className="space-y-6">
-      {/* Controls */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Button
-            variant="outline"
-            className="bg-muted border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground min-w-[140px] justify-between h-9"
-          >
-            All Subjects
-            <ChevronDown className="w-4 h-4 ml-2 opacity-50" />
-          </Button>
-          <Button
-            variant="outline"
-            className="bg-muted border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground min-w-[140px] justify-between h-9"
-          >
-            By Progress
-            <ChevronDown className="w-4 h-4 ml-2 opacity-50" />
-          </Button>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-400 mr-2">View:</span>
-          <div className="flex items-center gap-1 bg-muted p-1 rounded-lg border border-border">
-            <button
-              onClick={() => setView('grid')}
-              className={`p-1.5 rounded-md transition-colors ${
-                view === 'grid'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-              }`}
-            >
-              <LayoutGrid className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setView('list')}
-              className={`p-1.5 rounded-md transition-colors ${
-                view === 'list'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-              }`}
-            >
-              <List className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Header */}
       <SyllabusHeader

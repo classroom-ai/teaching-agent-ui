@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/Button/Button';
 import { Sun, Moon, Bell, Search, Menu } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useSidebar } from '@/contexts/SidebarContext';
 
 export default function Nav() {
@@ -73,7 +74,7 @@ export default function Nav() {
         </Button>
 
         {/* Profile */}
-        <div className="flex items-center gap-3 pl-2 border-l border-border hover:bg-accent cursor-pointer px-2 py-1 rounded-sm">
+        <Link href="/profile" className="flex items-center gap-3 pl-2 border-l border-border hover:bg-accent cursor-pointer px-2 py-1 rounded-sm">
           <div className="text-right hidden md:block">
             <div className="text-sm font-medium text-foreground">Faseeh Ahmad</div>
             <div className="text-xs text-muted-foreground">Student</div>
@@ -85,7 +86,7 @@ export default function Nav() {
               </span>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

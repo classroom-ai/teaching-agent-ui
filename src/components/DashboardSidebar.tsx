@@ -154,10 +154,10 @@ export default function DashboardSidebar() {
                 <span className="font-bold text-xs">SC</span>
               </div>
             </div>
-            <div className="flex flex-col">
+            <Link href='/profile' className="flex flex-col">
               <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">Sarah Chen</span>
               <span className="text-xs text-muted-foreground font-medium">Premium Student</span>
-            </div>
+            </Link>
           </div>
         </div>
       </aside>
