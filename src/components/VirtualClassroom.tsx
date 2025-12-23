@@ -183,7 +183,7 @@ export default function VirtualClassroom() {
               Notes
             </button>
             <div className="flex-1"></div>
-            <button className="cursor-pointer mr-2.5 bg-black text-sm text-white px-4 py-1.5 rounded-lg transition-colors duration-200"style={{ fontFamily: 'var(--font-rubik)' }}>
+            <button style={{ fontFamily: 'var(--font-rubik)' }}>
               End Session
             </button>
           </div>

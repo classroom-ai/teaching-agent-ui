@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Ubuntu, Nunito, Rubik, Noto_Sans } from "next/font/g
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SidebarProvider } from "@/contexts/SidebarContext";
 
 const notoSans = Noto_Sans({
   variable: '--font-sans',
@@ -58,8 +59,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <Analytics />
+          <SidebarProvider>
+            {children}
+            <Analytics />
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

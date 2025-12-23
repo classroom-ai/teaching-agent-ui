@@ -1,5 +1,4 @@
-import { ComponentExample } from "@/components/component-example";
-
+import DashboardSidebar from "@/components/DashboardSidebar";
 export default function Page() {
-return <ComponentExample />;
+return <DashboardSidebar />;
 }
