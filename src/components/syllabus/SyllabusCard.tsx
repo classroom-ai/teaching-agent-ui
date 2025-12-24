@@ -17,7 +17,6 @@ export function SyllabusCard({
   title,
   description,
   status,
-  progress,
   time,
   lessons,
   icon: Icon,
@@ -42,14 +41,7 @@ export function SyllabusCard({
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-3">
-          <div
-            className={cn(
-              'p-2 rounded-lg flex items-center justify-center transition-colors',
-              statusColor
-            )}
-          >
-            <Icon className="w-6 h-6" />
-          </div>
+          
           <div>
             <h3 className="font-semibold text-card-foreground group-hover:text-primary transition-colors">
               {title}
@@ -85,26 +77,7 @@ export function SyllabusCard({
         )}
       </div>
 
-      {/* Progress Bar */}
-      <div className="space-y-2 mb-6">
-        <div className="flex justify-between text-xs text-muted-foreground">
-          <span>Progress</span>
-          <span>{progress}%</span>
-        </div>
-        <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-          <div
-            className={cn(
-              'h-full rounded-full transition-all duration-500',
-              status === 'completed'
-                ? 'bg-green-500'
-                : status === 'in-progress'
-                ? 'bg-primary'
-                : 'bg-muted-foreground/30'
-            )}
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      </div>
+      
 
       <div className="mt-auto space-y-4">
         {/* Metadata */}

@@ -109,9 +109,6 @@ export function CourseSection() {
             <div className="w-1.5 h-6 bg-blue-500 rounded-full" />
             <h2 className="text-2xl font-bold text-foreground">Modern Courses</h2>
           </div>
-          <p className="text-muted-foreground">
-            Explore AI-powered courses designed for your success
-          </p>
         </div>
 
         {/* Controls */}
@@ -143,14 +140,7 @@ export function CourseSection() {
             )}
           </div>
 
-          <div className="flex items-center gap-1 bg-muted p-1 rounded-lg border border-border">
-            <button className="p-2 rounded-md bg-background text-foreground shadow-sm">
-              <LayoutGrid className="w-4 h-4" />
-            </button>
-            <button className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
-              <List className="w-4 h-4" />
-            </button>
-          </div>
+          
         </div>
       </div>
 

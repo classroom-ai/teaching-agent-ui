@@ -3,8 +3,6 @@
 import React, { useState } from 'react';
 import { SyllabusHeader } from './SyllabusHeader';
 import { SyllabusCard } from './SyllabusCard';
-import { MotivationBanner } from './MotivationBanner';
-import { Button } from '@/components/ui/Button/Button';
 import {
   ChevronDown,
   LayoutGrid,
@@ -104,8 +102,6 @@ export function SyllabusDashboard() {
         ))}
       </div>
 
-      {/* Banner */}
-      <MotivationBanner />
     </div>
   );
 }
