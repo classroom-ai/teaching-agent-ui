@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useSidebar } from "@/contexts/SidebarContext";
 import { useEffect, useRef } from "react";
+import { authClient } from "@/lib/auth-client";
 
 const SIDEBAR_ITEMS = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
@@ -28,6 +29,7 @@ export default function DashboardSidebar() {
   const pathname = usePathname();
   const { isOpen, close } = useSidebar();
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const { data: session } = authClient.useSession();
 
   // Handle ESC key
   useEffect(() => {
@@ -155,7 +157,9 @@ export default function DashboardSidebar() {
               </div>
             </div>
             <Link href='/profile' className="flex flex-col">
-              <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">Sarah Chen</span>
+              <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                {session?.user?.name || "Guest Student"}
+              </span>
               <span className="text-xs text-muted-foreground font-medium">Premium Student</span>
             </Link>
           </div>
