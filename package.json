@@ -48,6 +48,7 @@
     "@storybook/nextjs-vite": "^10.0.7",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitest/browser-playwright": "^4.0.8",
