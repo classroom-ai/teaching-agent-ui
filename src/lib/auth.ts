@@ -24,6 +24,11 @@ export const auth = betterAuth({
                 defaultValue: "user",
                 input: false, // don't allow user to set role
             },
+            onboardingCompleted: {
+                type: "boolean",
+                required: true,
+                defaultValue: false,
+            },
             lang: {
                 type: "string",
                 required: true,
