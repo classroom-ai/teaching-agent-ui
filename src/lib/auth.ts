@@ -9,6 +9,21 @@ import { sendEmail } from './SendEmail'; // your email sending function
 
 
 export const auth = betterAuth({
+    user: {
+        additionalFields: {
+            role: {
+                type: ["user", "admin"],
+                required: true,
+                defaultValue: "user",
+                input: false, // don't allow user to set role
+            },
+            lang: {
+                type: "string",
+                required: true,
+                defaultValue: "en",
+            },
+        },
+    },
     database: mongodbAdapter(db, {
         // Optional: if you don't provide a client, database transactions won't be enabled.
         client
@@ -26,6 +41,7 @@ export const auth = betterAuth({
             })
         },
         sendOnSignUp: true,
+        autoSignInAfterVerification: true,
     },
     plugins: [
         username(),
