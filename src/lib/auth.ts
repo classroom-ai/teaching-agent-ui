@@ -3,11 +3,17 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { username } from "better-auth/plugins"
-const URI = process.env.CONNECTION_STRING as string
+const URI = process.env.CONNECTION_STRING;
+if (!URI) {
+    throw new Error("Missing CONNECTION_STRING environment variable");
+}
 const client = new MongoClient(URI);
 const db = client.db();
 import { sendEmail } from './SendEmail'; // your email sending function
 
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+    console.warn("Missing Google Client ID or Secret. Google auth might fail.");
+}
 
 export const auth = betterAuth({
     user: {
