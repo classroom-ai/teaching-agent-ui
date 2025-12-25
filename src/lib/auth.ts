@@ -3,7 +3,8 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { username } from "better-auth/plugins"
-const client = new MongoClient("mongodb+srv://Faseeh99:_VdX4YVrG%23eq7PN@customers.murp9cg.mongodb.net/?appName=customers");
+const URI = process.env.CONNECTION_STRING as string
+const client = new MongoClient(URI);
 const db = client.db();
 import { sendEmail } from './SendEmail'; // your email sending function
 

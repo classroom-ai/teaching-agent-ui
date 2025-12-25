@@ -7,7 +7,7 @@ export const sendEmail = async ({ to, subject, text }: { to: string; subject: st
         secure: false,
         auth: {
             user: 'faseehkamboh9933@gmail.com',
-            pass: 'qzok gqey gfne hsbv',
+            pass: process.env.PASS as string,
         },
     });
 
